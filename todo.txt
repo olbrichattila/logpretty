@@ -1,3 +1,7 @@
 Add tests
 Add other log types
 Add a command line parameter to force a specific type of log to be parsed
+Add command line parameter to force log type, skip auto detect
+Add Command line parameter, just trying to detect log type
+Configurable log parser (.env env command line regex?)
+
