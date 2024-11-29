@@ -4,7 +4,7 @@
 
 Install:
 ```
-Todo
+go install github.com/olbrichattila/logpretty/tree/main/cmd@latest
 ```
 
 This command line utility re formats your logs. This can be used for real time debugging:
