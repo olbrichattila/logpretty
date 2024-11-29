@@ -1,0 +1,3 @@
+Add tests
+Add other log types
+Add a command line parameter to force a specific type of log to be parsed
