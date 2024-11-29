@@ -7,7 +7,7 @@ import (
 
 	"os"
 
-	formatter "github.com/olbrichattila/logpretty/pkg/formatters"
+	formatter "github.com/olbrichattila/logpretty/internal/formatters"
 )
 
 // New creates a new pipe, which listens on standard input and output formatted text
