@@ -1,40 +1,50 @@
-## Log prettier
+## Log Prettifier – Command Line Log Formatter
 
-!Note, this is currently in beta, work in progress
+> Note: Currently in Beta, work in progress.
 
-Install:
+### Installation
+To install the latest version of Log Prettifier, run the following command:
 ```
 go install github.com/olbrichattila/logpretty/tree/main/cmd@latest
 ```
 
-This command line utility re formats your logs. This can be used for real time debugging:
+### Overview
 
-It uses standard input to receive the data, therefore it can be piped.
+Log Prettifier is a powerful command-line utility designed to format and improve the readability of your log files. Ideal for real-time debugging, it allows you to pipe your log data into the tool for a cleaner, more structured output.
 
-Use cases:
+Log Prettifier supports a wide range of log formats, with automatic log type detection for ease of use.
 
+### Usage
+
+You can use Log Prettifier with standard input, making it highly versatile for various logging needs. Below are some examples of how to use it:
+
+* Format a log file:
 ```
 cat ./mylog.log | logpretty
 ```
 
+* Monitor and format logs in real time:
 ```
 tail -f ./mylog.log | logpretty
 ```
 
-Currently it tries to automatically identify the log type.
-The currently supported types:
+### Supported Log Formats
+Currently, Log Prettifier supports the following log formats:
 
-- PHP
-- Apache
-- Laravel
-- Yii1
-- Yii2
-- Yii2 (JSON format)
-- Generic JSON format
-- Any separated logs with [] or blanks
-- Others coming soon.
+- PHP Logs
+- Apache Logs
+- Laravel Logs
+- Yii1 Logs
+- Yii2 Logs
+- Yii2 Logs (JSON format)
+- Generic JSON Logs
+- Any logs with space or bracket-separated entries
+- More log formats coming soon!
 
-Coming soon:
-- New log types
-- Command line parameter to skip auto detect and force a log type
-- Custom defined log format (from env or .env file, to be decided)
+### Upcoming Features
+In future updates, Log Prettifier will include:
+- Additional log format support
+- A command-line parameter to disable auto-detection and specify a log type manually
+- Custom log format configuration via environment variables or .env files (to be determined)
+
+This project is licensed under the MIT License – see the LICENSE file for details.
