@@ -5,7 +5,7 @@
 ### Installation
 To install the latest version of Log Prettifier, run the following command:
 ```
-go install github.com/olbrichattila/logpretty/tree/main/cmd@latest
+go install github.com/olbrichattila/logpretty/cmd@latest
 ```
 
 ### Overview
