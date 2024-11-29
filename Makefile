@@ -1,5 +1,5 @@
 run:
-	go run ./cmd
+	go run ./cmd/logpretty/
 lint:
 	gocritic check ./...
 	revive ./...
