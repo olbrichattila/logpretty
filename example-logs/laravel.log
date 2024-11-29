@@ -1,0 +1,8 @@
+[2024-11-26 14:20:15] local.ERROR: Something went wrong {"user_id":1,"exception":"Exception message"}
+[2024-11-26 14:20:15] local.ERROR: Something went wrong {"user_id":1,"exception":"Exception message2"}
+[2024-11-26 14:20:15] local.ERROR: Something went wrong {"user_id":1,"exception":"Exception message2"}
+[2024-11-26 14:20:15] local.ERROR: Something went wrong {"user_id":1,"exception":"Exception message5"}
+[2024-11-26 14:20:15] local.ERROR: Something went wrong {"user_id":1,"exception":"Exception message5"}
+[2024-11-26 14:20:15] local.ERROR: Something went wrong {"user_id":1,"exception":"Exception message3"}
+[2024-11-26 14:20:15] local.ERROR: Something went wrong {"user_id":1,"exception":"Exception message3"}
+[2024-11-26 14:20:15] local.ERROR: Something went wrong {"user_id":1,"exception":{"key": 1545, "value": 78787}}
