@@ -45,7 +45,7 @@ func (f *fPhp) format() string {
 		}
 
 		return fmt.Sprintf(
-			"PHP\n%sTimestamp:%s %s\n%sLog Level:%s %s\n%sMessage:%s %s\n",
+			"---PHP----\n%sTimestamp:%s %s\n%sLog Level:%s %s\n%sMessage:%s %s\n",
 			green, reset,
 			timestamp,
 			green, reset,

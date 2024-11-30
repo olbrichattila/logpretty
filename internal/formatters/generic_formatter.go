@@ -28,7 +28,7 @@ func (f *fGeneric) format() string {
 
 func (f *fGeneric) universalSplitWithEscapes() string {
 	sb := &strings.Builder{}
-	sb.WriteString("Generic\n")
+	sb.WriteString("---Generic---\n")
 	re := regexp.MustCompile(`"([^"\\]*(\\.)?)*"|\[[^\]]*\]|\\.|[^\s]+`)
 	matches := re.FindAllString(f.line, -1)
 

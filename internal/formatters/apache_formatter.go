@@ -35,7 +35,7 @@ func (f *fApache) format() string {
 		bytes := matches[6]
 
 		return fmt.Sprintf(
-			"%sIP:%s %s\n%sUser:%s %s\n%sTimestamp:%s %s\n%sRequest:%s %s\n%sStatus:%s %s\n%sBytes:%s %s\n",
+			"--Apache---\n%sIP:%s %s\n%sUser:%s %s\n%sTimestamp:%s %s\n%sRequest:%s %s\n%sStatus:%s %s\n%sBytes:%s %s\n",
 			green, reset,
 			ip,
 			green, reset,

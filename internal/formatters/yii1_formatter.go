@@ -46,7 +46,7 @@ func (f *fYii1) format() string {
 		}
 
 		return fmt.Sprintf(
-			"Yii1\n%sTimestamp:%s %s\n%sLog Level:%s %s\n%sCategory:%s %s\n%sMessage:%s %s\n",
+			"---Yii1---\n%sTimestamp:%s %s\n%sLog Level:%s %s\n%sCategory:%s %s\n%sMessage:%s %s\n",
 			green, reset,
 			timestamp,
 			green, reset,
