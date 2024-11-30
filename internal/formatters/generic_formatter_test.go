@@ -27,7 +27,7 @@ func (t *genericTestSuite) TearDownTest() {
 
 func (t *genericTestSuite) TestisValid() {
 	// it always returns true
-	valid := t.formatter.isValid("")
+	valid := t.formatter.isValid(genericLine)
 	t.True(valid)
 }
 
