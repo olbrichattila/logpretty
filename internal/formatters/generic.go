@@ -28,6 +28,7 @@ func (f *fGeneric) format() string {
 
 func (f *fGeneric) universalSplitWithEscapes() string {
 	sb := &strings.Builder{}
+	sb.WriteString("Generic\n")
 	re := regexp.MustCompile(`"([^"\\]*(\\.)?)*"|\[[^\]]*\]|\\.|[^\s]+`)
 	matches := re.FindAllString(f.line, -1)
 
@@ -39,9 +40,9 @@ func (f *fGeneric) universalSplitWithEscapes() string {
 		}
 
 		if f.jsonFormatter.isValid(unescapedBlock) {
-			sb.WriteString(Green)
+			sb.WriteString(green)
 			sb.WriteString(f.jsonFormatter.format())
-			sb.WriteString(Reset)
+			sb.WriteString(reset)
 		} else {
 			sb.WriteString(unescapedBlock)
 		}

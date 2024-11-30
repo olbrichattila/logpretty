@@ -3,26 +3,26 @@ package formatter
 import "encoding/json"
 
 func newJSON() formatter {
-	return &fJson{}
+	return &fJSON{}
 }
 
-type fJson struct {
+type fJSON struct {
 	line string
 	json interface{}
 }
 
-func (f *fJson) isValid(line string) bool {
+func (f *fJSON) isValid(line string) bool {
 	f.line = line
 	err := json.Unmarshal([]byte(line), &f.json)
 
 	return err == nil
 }
 
-func (f *fJson) format() string {
+func (f *fJSON) format() string {
 	res, err := json.MarshalIndent(f.json, "", " ")
 	if err != nil {
 		return f.line
 	}
 
-	return string(res)
+	return "Json\n" + string(res)
 }

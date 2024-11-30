@@ -36,17 +36,17 @@ func (f *fApache) format() string {
 
 		return fmt.Sprintf(
 			"%sIP:%s %s\n%sUser:%s %s\n%sTimestamp:%s %s\n%sRequest:%s %s\n%sStatus:%s %s\n%sBytes:%s %s\n",
-			Green, Reset,
+			green, reset,
 			ip,
-			Green, Reset,
+			green, reset,
 			user,
-			Green, Reset,
+			green, reset,
 			timestamp,
-			Green, Reset,
+			green, reset,
 			request,
-			Green, Reset,
+			green, reset,
 			status,
-			Green, Reset,
+			green, reset,
 			bytes,
 		)
 	}

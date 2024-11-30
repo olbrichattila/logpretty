@@ -16,7 +16,8 @@ func TestJSONRunner(t *testing.T) {
 }
 
 func (t *jsonTestSuite) SetupTest() {
-	// t.formatter = newXX()
+
+	t.formatter = newJSON()
 }
 
 func (t *jsonTestSuite) TearDownTest() {
@@ -24,9 +25,16 @@ func (t *jsonTestSuite) TearDownTest() {
 }
 
 func (t *jsonTestSuite) TestisValid() {
-	// TODO
+	valid := t.formatter.isValid("Invalid Json")
+	t.False(valid)
+
+	valid = t.formatter.isValid("{\"key\": 100}")
+	t.True(valid)
 }
 
 func (t *jsonTestSuite) TestFormat() {
-	// TODO
+	t.formatter.isValid("{\"key\": 100, \"sub\": [{\"a\": 5, \"b\": 6}]}")
+	formatted := t.formatter.format()
+
+	t.SubstringCount(8, "\n", formatted)
 }

@@ -41,19 +41,19 @@ func (f *fLaravel) format() string {
 		message = remaining
 		for _, jsonStr := range extractedJsons {
 			if f.jsonFormatter.isValid(jsonStr) {
-				message += "\n" + Blue + f.jsonFormatter.format() + Reset
+				message += "\n" + blue + f.jsonFormatter.format() + reset
 			}
 		}
 
 		return fmt.Sprintf(
-			"%sTimestamp:%s %s\n%sEnvironment:%s %s\n%sLevel:%s %s\n%sMessage:%s %s\n",
-			Green, Reset,
+			"Laravel\n%sTimestamp:%s %s\n%sEnvironment:%s %s\n%sLevel:%s %s\n%sMessage:%s %s\n",
+			green, reset,
 			timestamp,
-			Green, Reset,
+			green, reset,
 			environment,
-			Green, Reset,
+			green, reset,
 			level,
-			Green, Reset,
+			green, reset,
 			message,
 		)
 	}

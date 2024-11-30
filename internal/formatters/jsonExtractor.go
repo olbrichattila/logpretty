@@ -60,7 +60,7 @@ func (*jExtractor) extractJSON(input string) ([]string, string) {
 					var temp interface{}
 					if json.Unmarshal([]byte(block), &temp) == nil {
 						jsonBlocks = append(jsonBlocks, block)
-						start = -1 // Reset start after successful extraction
+						start = -1 // reset start after successful extraction
 					} else {
 						remaining.WriteString(input[start : i+1]) // Add unvalidated block back to remaining string
 					}

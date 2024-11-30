@@ -41,19 +41,19 @@ func (f *fYii1) format() string {
 		message = remaining
 		for _, jsonStr := range extractedJsons {
 			if f.jsonFormatter.isValid(jsonStr) {
-				message += "\n" + Blue + f.jsonFormatter.format() + Reset
+				message += "\n" + blue + f.jsonFormatter.format() + reset
 			}
 		}
 
 		return fmt.Sprintf(
-			"%sTimestamp:%s %s\n%sLog Level:%s %s\n%sCategory:%s %s\n%sMessage:%s %s\n",
-			Green, Reset,
+			"Yii1\n%sTimestamp:%s %s\n%sLog Level:%s %s\n%sCategory:%s %s\n%sMessage:%s %s\n",
+			green, reset,
 			timestamp,
-			Green, Reset,
+			green, reset,
 			logLevel,
-			Green, Reset,
+			green, reset,
 			category,
-			Green, Reset,
+			green, reset,
 			message,
 		)
 	}

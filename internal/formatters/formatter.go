@@ -1,9 +1,10 @@
+// Package formatter contains different log formatting algorithms
 package formatter
 
 const (
-	Reset = "\033[0m"
-	Green = "\033[32m"
-	Blue  = "\033[34m"
+	reset = "\033[0m"
+	green = "\033[32m"
+	blue  = "\033[34m"
 )
 
 type formatter interface {
