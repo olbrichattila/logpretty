@@ -41,10 +41,25 @@ Currently, Log Prettifier supports the following log formats:
 - Any logs with space or bracket-separated entries
 - More log formats coming soon!
 
+
+### Manual Log Parser Selection:
+By default, Log Prettier automatically detects the log format. However, you can override this behavior and force a specific parser by using one of the following parameters:
+
+- php: For PHP logs
+- apache: For Apache access logs
+- laravel: For Laravel logs
+- yii2: For Yii2 logs
+- yii1: For Yii1 logs
+- json: For JSON logs
+
+### Example:
+```
+tail -f ./mylog.log | logpretty laravel
+```
+
 ### Upcoming Features
 In future updates, Log Prettifier will include:
 - Additional log format support
-- A command-line parameter to disable auto-detection and specify a log type manually
 - Custom log format configuration via environment variables or .env files (to be determined)
 
 This project is licensed under the MIT License – see the LICENSE file for details.
