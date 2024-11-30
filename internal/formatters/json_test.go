@@ -36,5 +36,5 @@ func (t *jsonTestSuite) TestFormat() {
 	t.formatter.isValid("{\"key\": 100, \"sub\": [{\"a\": 5, \"b\": 6}]}")
 	formatted := t.formatter.format()
 
-	t.SubstringCount(8, "\n", formatted)
+	t.SubstringCount(9, "\n", formatted)
 }
