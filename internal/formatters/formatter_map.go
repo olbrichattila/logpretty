@@ -12,3 +12,12 @@ var formatterMapping = []formatter{
 	newYii1(jsonFormatter, extractor),
 	newGeneric(jsonFormatter),
 }
+
+var envFormatterMap = map[string]int{
+	"json":    0,
+	"php":     1,
+	"apache":  2,
+	"laravel": 3,
+	"yii2":    4,
+	"yii1":    5,
+}

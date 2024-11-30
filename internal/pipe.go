@@ -24,6 +24,12 @@ type pipe struct {
 }
 
 func (*pipe) Listen() {
+	err := formatter.Validate()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
 	scanner := bufio.NewScanner(os.Stdin)
 
 	for scanner.Scan() {
