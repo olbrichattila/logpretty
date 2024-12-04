@@ -8,9 +8,9 @@ import (
 )
 
 const (
-	extractJSON1      = "{\"key\": 1}"
-	extractJSON2      = "{\"key\": 1}"
-	extractNestedJSON = "{\"key\": \"subKey\": [{\"v1\": 1},{\"v2\": 2}]}"
+	extractJSON1      = `{"key": 1}`
+	extractJSON2      = `{"key": 2}`
+	extractNestedJSON = `{"key": 1, "subKey": [{"v1": 1},{"v2": 2}]}`
 )
 
 type jsonExtractorTestSuite struct {
@@ -83,12 +83,31 @@ func (t *jsonExtractorTestSuite) TestTwoJsonToExtractInTheMiddle() {
 	t.Equal(extractJSON2, blocks[1])
 }
 
-// // TODO nested JSON extract does not work
-// func (t *jsonExtractorTestSuite) TestExtractNested() {
-// 	jsonText := fmt.Sprintf("before %s after", extractNestedJSON)
-// 	blocks, remaining := t.extractor.extractJSON(jsonText)
+func (t *jsonExtractorTestSuite) TestExtractNested() {
+	jsonText := fmt.Sprintf("before %s after", extractNestedJSON)
+	blocks, remaining := t.extractor.extractJSON(jsonText)
 
-// 	t.Len(blocks, 2)
-// 	t.Equal("before  after", remaining)
-// 	t.Equal(extractNestedJSON, blocks[0])
-// }
+	t.Len(blocks, 1)
+	t.Equal("before  after", remaining)
+	t.Equal(extractNestedJSON, blocks[0])
+}
+
+func (t *jsonExtractorTestSuite) TestTwoExtractNested() {
+	jsonText := fmt.Sprintf("before %s after %s", extractNestedJSON, extractNestedJSON)
+	blocks, remaining := t.extractor.extractJSON(jsonText)
+
+	t.Len(blocks, 2)
+	t.Equal("before  after ", remaining)
+	t.Equal(extractNestedJSON, blocks[0])
+	t.Equal(extractNestedJSON, blocks[1])
+}
+
+func (t *jsonExtractorTestSuite) TestOneNormalOneNestedJsonExtracted() {
+	jsonText := fmt.Sprintf("before %s after %s", extractJSON2, extractNestedJSON)
+	blocks, remaining := t.extractor.extractJSON(jsonText)
+
+	t.Len(blocks, 2)
+	t.Equal("before  after ", remaining)
+	t.Equal(extractJSON2, blocks[0])
+	t.Equal(extractNestedJSON, blocks[1])
+}
