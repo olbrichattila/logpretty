@@ -36,6 +36,6 @@ func (t *laravelTestSuite) TestisValid() {
 
 func (t *laravelTestSuite) TestFormat() {
 	if t.formatter.isValid(laravelLine) {
-		t.SubstringCount(13, "\n", t.formatter.format())
+		t.SubstringCount(14, "\n", t.formatter.format())
 	}
 }

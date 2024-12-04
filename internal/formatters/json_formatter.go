@@ -29,12 +29,20 @@ func (f *fJSON) format() string {
 		return f.line
 	}
 
-	res, err := json.MarshalIndent(f.json, "", " ")
+	// Use a custom encoder to prevent escaping
+	var sb strings.Builder
+	encoder := json.NewEncoder(&sb)
+	encoder.SetIndent("", " ")
+	encoder.SetEscapeHTML(false) // Disable HTML escaping
+
+	err := encoder.Encode(f.json)
 	if err != nil {
 		return f.line
 	}
 
-	return green + "---Json---\n" + reset + strings.ReplaceAll(f.colorize(string(res)), "\\n", "\n")
+	// Format the result and add color
+	formatted := sb.String()
+	return green + "---Json---\n" + reset + strings.ReplaceAll(f.colorize(formatted), "\\n", "\n")
 }
 
 func (f *fJSON) colorize(s string) string {

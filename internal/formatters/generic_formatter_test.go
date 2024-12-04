@@ -33,6 +33,6 @@ func (t *genericTestSuite) TestisValid() {
 
 func (t *genericTestSuite) TestFormat() {
 	if t.formatter.isValid(genericLine) {
-		t.SubstringCount(8, "\n", t.formatter.format())
+		t.SubstringCount(9, "\n", t.formatter.format())
 	}
 }
