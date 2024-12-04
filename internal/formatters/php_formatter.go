@@ -3,6 +3,7 @@ package formatter
 import (
 	"fmt"
 	"regexp"
+	"strings"
 )
 
 func newPHP(jsonFormatter formatter, extractor jsonExtractor) formatter {
@@ -43,6 +44,8 @@ func (f *fPhp) format() string {
 				message += "\n" + blue + f.jsonFormatter.format() + reset
 			}
 		}
+
+		message = strings.ReplaceAll(message, "\\n", "\n")
 
 		return fmt.Sprintf(
 			"---PHP----\n%sTimestamp:%s %s\n%sLog Level:%s %s\n%sMessage:%s %s\n",

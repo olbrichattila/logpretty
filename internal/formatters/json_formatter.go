@@ -1,6 +1,9 @@
 package formatter
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"strings"
+)
 
 func newJSON() formatter {
 	return &fJSON{}
@@ -31,5 +34,5 @@ func (f *fJSON) format() string {
 		return f.line
 	}
 
-	return "Json\n" + string(res)
+	return "---Json\n---" + strings.ReplaceAll(string(res), "\\n", "\n")
 }

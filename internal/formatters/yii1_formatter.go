@@ -3,6 +3,7 @@ package formatter
 import (
 	"fmt"
 	"regexp"
+	"strings"
 )
 
 func newYii1(jsonFormatter formatter, extractor jsonExtractor) formatter {
@@ -44,6 +45,8 @@ func (f *fYii1) format() string {
 				message += "\n" + blue + f.jsonFormatter.format() + reset
 			}
 		}
+
+		message = strings.ReplaceAll(message, "\\n", "\n")
 
 		return fmt.Sprintf(
 			"---Yii1---\n%sTimestamp:%s %s\n%sLog Level:%s %s\n%sCategory:%s %s\n%sMessage:%s %s\n",

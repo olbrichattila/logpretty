@@ -3,6 +3,7 @@ package formatter
 import (
 	"fmt"
 	"regexp"
+	"strings"
 )
 
 func newLaravel(jsonFormatter formatter, extractor jsonExtractor) formatter {
@@ -44,6 +45,8 @@ func (f *fLaravel) format() string {
 				message += "\n" + blue + f.jsonFormatter.format() + reset
 			}
 		}
+
+		message = strings.ReplaceAll(message, "\\n", "\n")
 
 		return fmt.Sprintf(
 			"Laravel\n%sTimestamp:%s %s\n%sEnvironment:%s %s\n%sLevel:%s %s\n%sMessage:%s %s\n",
