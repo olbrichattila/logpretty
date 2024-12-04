@@ -34,5 +34,28 @@ func (f *fJSON) format() string {
 		return f.line
 	}
 
-	return "---Json\n---" + strings.ReplaceAll(string(res), "\\n", "\n")
+	return green + "---Json---\n" + reset + strings.ReplaceAll(f.colorize(string(res)), "\\n", "\n")
+}
+
+func (f *fJSON) colorize(s string) string {
+	sb := &strings.Builder{}
+
+	for _, char := range s {
+		sb.WriteString(f.getReplacement(char))
+	}
+
+	return sb.String()
+}
+
+func (f *fJSON) getReplacement(char rune) string {
+	switch char {
+	case '{', '}':
+		return blue + string(char) + reset
+	case '[', ']':
+		return red + string(char) + reset
+	case '"', '\'', '`':
+		return green + string(char) + reset
+	}
+
+	return string(char)
 }
