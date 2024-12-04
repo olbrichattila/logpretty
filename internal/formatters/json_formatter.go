@@ -2,7 +2,6 @@ package formatter
 
 import (
 	"encoding/json"
-	"fmt"
 	"strings"
 )
 
@@ -59,14 +58,10 @@ func (f *fJSON) processAndReplaceJSONStrings(data interface{}) interface{} {
 			v[i] = f.processAndReplaceJSONStrings(value)
 		}
 	case string:
-		fmt.Printf("Processing string: %q\n", v)
-
 		var parsed interface{}
 		if err := json.Unmarshal([]byte(v), &parsed); err == nil {
-			fmt.Printf("Parsed JSON: %v\n", parsed)
 			return f.processAndReplaceJSONStrings(parsed)
 		} else {
-			fmt.Printf("String is not JSON: %q\n", v)
 		}
 	}
 	return data
