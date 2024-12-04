@@ -29,6 +29,7 @@ func Run(line string) string {
 	return formatter.format()
 }
 
+// Validate formatter
 func Validate() error {
 	if len(os.Args) == 1 {
 		return nil

@@ -49,7 +49,7 @@ func (f *fJSON) colorize(s string) string {
 
 func (f *fJSON) getReplacement(char rune) string {
 	switch char {
-	case '{', '}':
+	case '{', '}', '(', ')':
 		return blue + string(char) + reset
 	case '[', ']':
 		return red + string(char) + reset
